@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj5xt7p5evrml"]
+
+[ext_resource type="Script" uid="uid://bj818yqt1ech8" path="res://scripts/game_manager.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bp0hovdgjdksg" path="res://scenes/adriana.tscn" id="1_ojtm3"]
+[ext_resource type="Script" uid="uid://cjgq3kihebscy" path="res://scripts/adriana.gd" id="2_jyky4"]
+[ext_resource type="Script" uid="uid://rs5c4px4f30v" path="res://scripts/label.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://b56wx0s23v18m" path="res://scripts/action_status_label.gd" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://6jrb7aduw7kb" path="res://xinanigans/fonts/PixelOperator8.ttf" id="5_p57ef"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_lnu2h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(25, -33)
+zoom = Vector2(6, 6)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ojtm3")]
+position = Vector2(22, -40)
+script = ExtResource("2_jyky4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -67.0
+offset_top = -85.0
+offset_right = -18.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "Mood:"
+script = ExtResource("4_lbhrr")
+
+[node name="ActionStatusLabel" type="Label" parent="."]
+offset_left = -66.0
+offset_top = -4.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 8
+script = ExtResource("5_iywne")
